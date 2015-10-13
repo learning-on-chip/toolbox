@@ -32,7 +32,12 @@ all: install
 	@echo
 	@echo 'export $(LIBRARY_VARIABLE)="$(RUST_PATH)/lib:$$$(LIBRARY_VARIABLE)"'
 
-install clean:
+clean install:
 	@$(MAKE) -C src $@
 
-.PHONY: all install clean
+update:
+	git submodule init
+	git submodule foreach git checkout master
+	git submodule foreach git pull
+
+.PHONY: all clean install update
