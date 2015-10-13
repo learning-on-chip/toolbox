@@ -36,8 +36,8 @@ clean install:
 	@$(MAKE) -C src $@
 
 update:
-	git submodule init
-	git submodule foreach git checkout master
-	git submodule foreach git pull
+	@git submodule init
+	@git submodule foreach git checkout master
+	@git submodule foreach git pull
 
 .PHONY: all clean install update
