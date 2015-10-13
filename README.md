@@ -1,6 +1,7 @@
 # Toolbox
 
-The repository aggregates a number of tools, namely,
+The repository aggregates a number of tools into a single toolbox. The tools
+are:
 
 * [planner](https://github.com/learning-on-chip/planner),
 * [recorder](https://github.com/learning-on-chip/recorder), and
