@@ -1,0 +1,9 @@
+[submodule "src/planner"]
+	path = src/planner
+	url = https://github.com/learning-on-chip/planner.git
+[submodule "src/recorder"]
+	path = src/recorder
+	url = https://github.com/learning-on-chip/recorder.git
+[submodule "src/streamer"]
+	path = src/streamer
+	url = https://github.com/learning-on-chip/streamer.git
