@@ -1,6 +1,10 @@
 # Toolbox
 
-The repository is a collection of tools.
+The repository aggregates a number of tools, namely,
+
+* [planner](https://github.com/learning-on-chip/planner),
+* [recorder](https://github.com/learning-on-chip/recorder), and
+* [streamer](https://github.com/learning-on-chip/streamer).
 
 ## Installation
 
