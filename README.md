@@ -18,7 +18,7 @@ git clone https://github.com/learning-on-chip/toolbox.git --recursive
 Compile:
 
 ```bash
-make
+cd toolbox && make
 ```
 
 Add the `bin` directory to the `PATH` environment variable:
