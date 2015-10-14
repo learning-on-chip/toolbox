@@ -3,9 +3,9 @@
 The repository aggregates a number of tools into a single toolbox. The tools
 are:
 
-* [planner](https://github.com/learning-on-chip/planner),
-* [recorder](https://github.com/learning-on-chip/recorder), and
-* [streamer](https://github.com/learning-on-chip/streamer).
+* [Planner](https://github.com/learning-on-chip/planner),
+* [Recorder](https://github.com/learning-on-chip/recorder), and
+* [Streamer](https://github.com/learning-on-chip/streamer).
 
 ## Installation
 
