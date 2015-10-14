@@ -1,7 +1,7 @@
 bin := $(ROOT)/bin
 lib := $(ROOT)/lib
 
-tools := $(patsubst ./%,%,$(shell find . -maxdepth 1 ! -path . -type d))
+tools := planner recorder streamer
 
 define declare_tool
 $(bin)/$(1): $(shell find $(1)/src -name *.rs)
