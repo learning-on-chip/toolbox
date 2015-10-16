@@ -24,11 +24,6 @@ all: install
 	@hash tput && tput sgr0
 	@echo 'export PATH="$(ROOT)/bin:$$PATH"'
 	@echo 'export $(LIBRARY_VARIABLE)="$(ROOT)/lib:$$$(LIBRARY_VARIABLE)"'
-	@echo
-	@hash tput && tput setaf 2
-	@echo 'Make sure that the native Rust libraries are accessible as well:'
-	@hash tput && tput sgr0
-	@echo 'export $(LIBRARY_VARIABLE)="$(RUST_ROOT)/lib:$$$(LIBRARY_VARIABLE)"'
 
 clean install:
 	@$(MAKE) -C src $@
