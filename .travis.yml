@@ -1,0 +1,17 @@
+language: rust
+sudo: false
+rust:
+  - stable
+  - beta
+  - nightly
+
+addons:
+  apt:
+    packages:
+      - gfortran
+
+script:
+  - make
+
+notifications:
+  email: false

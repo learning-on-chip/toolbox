@@ -1,4 +1,4 @@
-# Toolbox
+# Toolbox [![Status][status-img]][status-url]
 
 Toolbox is a collection of tools. The tools are:
 
@@ -32,3 +32,6 @@ Add the `lib` directory to the `DYLD_LIBRARY_PATH` (OS X) or `LD_LIBRARY_PATH`
 ```bash
 export DYLD_LIBRARY_PATH="`pwd`/lib:$DYLD_LIBRARY_PATH"
 ```
+
+[status-img]: https://travis-ci.org/learning-on-chip/toolbox.svg?branch=master
+[status-url]: https://travis-ci.org/learning-on-chip/toolbox
