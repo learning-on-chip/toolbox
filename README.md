@@ -26,7 +26,7 @@ Add the `bin` directory to the `PATH` environment variable:
 export PATH="`pwd`/bin:$PATH"
 ```
 
-Add the `lib` directory to the `DYLD_LIBRARY_PATH` (OS X) or `LD_LIBRARY_PATH`
+Add the `lib` directory to the `DYLD_LIBRARY_PATH` (macOS) or `LD_LIBRARY_PATH`
 (GNU/Linux) environment variable:
 
 ```bash
