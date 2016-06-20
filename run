@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BINARY_ROOT=${ROOT}/bin
+LIBRARY_ROOT=${ROOT}/lib
+
+PATH="${BINARY_ROOT}:${PATH}"
+if [ `uname` == 'Darwin' ]; then
+  DYLD_LIBRARY_PATH="${LIBRARY_ROOT}:${DYLD_LIBRARY_PATH}"
+else
+  LD_LIBRARY_PATH="${LIBRARY_ROOT}:${LD_LIBRARY_PATH}"
+fi
+
+$@
