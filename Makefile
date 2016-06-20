@@ -2,10 +2,10 @@ export ROOT := $(shell pwd)
 
 ifeq ($(shell uname),Darwin)
 	export LIBRARY_VARIABLE = DYLD_LIBRARY_PATH
-	export LIBRARY_SUFFIC = dylib
+	export LIBRARY_SUFFIX = dylib
 else
 	export LIBRARY_VARIABLE = LD_LIBRARY_PATH
-	export LIBRARY_SUFFIC = so
+	export LIBRARY_SUFFIX = so
 endif
 
 export CARGO ?= $(shell which cargo)
@@ -17,6 +17,9 @@ export RUST_ROOT ?= $(subst /bin/rustc,,$(shell which rustc))
 ifeq ($(RUST_ROOT),)
 	$(error Failed to find Rust)
 endif
+
+export ENVIRONMENT := $(LIBRARY_VARIABLE)="$(LIBRARY_VARIABLE):$(RUST_ROOT)/lib"
+export CARGO := $(ENVIRONMENT) $(CARGO)
 
 all: install
 	@hash tput && tput setaf 2
