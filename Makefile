@@ -1,21 +1,21 @@
 export ROOT := $(shell pwd)
 
 ifeq ($(shell uname),Darwin)
-export LIBRARY_VARIABLE = DYLD_LIBRARY_PATH
-export LIBRARY_SUFFIC = dylib
+	export LIBRARY_VARIABLE = DYLD_LIBRARY_PATH
+	export LIBRARY_SUFFIC = dylib
 else
-export LIBRARY_VARIABLE = LD_LIBRARY_PATH
-export LIBRARY_SUFFIC = so
+	export LIBRARY_VARIABLE = LD_LIBRARY_PATH
+	export LIBRARY_SUFFIC = so
 endif
 
 export CARGO ?= $(shell which cargo)
 ifeq ($(CARGO),)
-$(error Failed to find Cargo)
+	$(error Failed to find Cargo)
 endif
 
 export RUST_ROOT ?= $(subst /bin/rustc,,$(shell which rustc))
 ifeq ($(RUST_ROOT),)
-$(error Failed to find Rust)
+	$(error Failed to find Rust)
 endif
 
 all: install
