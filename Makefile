@@ -1,35 +1,35 @@
 export ROOT := $(shell pwd)
 
 ifeq ($(shell uname),Darwin)
-	export LIBRARY_VARIABLE = DYLD_LIBRARY_PATH
-	export LIBRARY_SUFFIX = dylib
+export LIBRARY_VARIABLE = DYLD_LIBRARY_PATH
+export LIBRARY_SUFFIX = dylib
 else
-	export LIBRARY_VARIABLE = LD_LIBRARY_PATH
-	export LIBRARY_SUFFIX = so
+export LIBRARY_VARIABLE = LD_LIBRARY_PATH
+export LIBRARY_SUFFIX = so
 endif
 
 export CARGO ?= $(shell which cargo)
-ifeq ($(CARGO),)
-	$(error Failed to find Cargo)
+ifeq (${CARGO},)
+$(error Failed to find Cargo)
 endif
 
 export RUST_ROOT ?= $(subst /bin/rustc,,$(shell which rustc))
-ifeq ($(RUST_ROOT),)
-	$(error Failed to find Rust)
+ifeq (${RUST_ROOT},)
+$(error Failed to find Rust)
 endif
 
-export ENVIRONMENT := $(LIBRARY_VARIABLE)="$(LIBRARY_VARIABLE):$(RUST_ROOT)/lib"
-export CARGO := $(ENVIRONMENT) $(CARGO)
+export ENVIRONMENT := ${LIBRARY_VARIABLE}="${LIBRARY_VARIABLE}:${RUST_ROOT}/lib"
+export CARGO := ${ENVIRONMENT} ${CARGO}
 
 all: install
 	@hash tput && tput setaf 2
 	@echo 'Well done! Set your environment variables as follows:'
 	@hash tput && tput sgr0
-	@echo 'export PATH="$(ROOT)/bin:$$PATH"'
-	@echo 'export $(LIBRARY_VARIABLE)="$(ROOT)/lib:$$$(LIBRARY_VARIABLE)"'
+	@echo 'export PATH="${ROOT}/bin:$${PATH}"'
+	@echo 'export ${LIBRARY_VARIABLE}="${ROOT}/lib:$$${LIBRARY_VARIABLE}"'
 
 clean install:
-	@$(MAKE) -C src $@
+	@${MAKE} -C src $@
 
 update:
 	@git submodule init
